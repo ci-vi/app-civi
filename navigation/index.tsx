@@ -33,6 +33,7 @@ function RootNavigator() {
     <Stack.Navigator screenOptions={{ headerShown: false }}>
         
       <Stack.Screen name="Welcome" component={Welcome} />
+      <Stack.Screen name="Home" component={BottomTabNavigator} />
         {
             //<Stack.Screen name="Root" component={BottomTabNavigator} />
         }

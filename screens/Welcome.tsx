@@ -12,9 +12,10 @@ import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
 
 
-export default function Welcome() {
+export default function Welcome({navigation}) {
   const onPressContinue = () => {
-    //setGenerateOffer("[pressed]");
+      console.log('Button pressed, to home')
+      navigation.navigate('Home')
   };
 
   return (
@@ -67,6 +68,7 @@ const styles = StyleSheet.create({
     borderRadius: 50,
     padding: 30,
     backgroundColor: '#1522C2',
+    zIndex:1,
   },
   buttonText: {
       color: 'white',
