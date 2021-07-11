@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, {useState} from 'react';
 import {
   StyleSheet,
   Linking,
@@ -39,8 +39,25 @@ export default function TabOneScreen() {
          console.log(e)
      })
   };
+
+  // text click
+  const [searchOffer, setSearchOffer] = useState("Busco una oportunidad laboral");
+  const [generateOffer, setGenerateOffer] = useState("Ofrezco una oportunidad laboral");
+  const onPressSearchOffer = () => {
+    //setTitleText("[pressed]");
+  };
+
+  const onPressGenerateOffer = () => {
+    //setGenerateOffer("[pressed]");
+  };
+
   return (
     <View style={styles.container}>
+        <Text style={styles.title}>Por qué estás acá?</Text>
+
+        <Button style={styles.option} onPress={onPressSearchOffer} title={searchOffer}> </Button>
+
+        <Button style={styles.option} onPress={onPressGenerateOffer} title={generateOffer}> </Button>
     {/*<Text style={styles.title}>Tab One</Text>
         <Button
             onPress={onLoginWithAidi} title="qweqwe">
@@ -63,6 +80,11 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 20,
     fontWeight: 'bold',
+    marginVertical: 30,
+  },
+  option: {
+    fontSize: 20,
+    marginVertical: 30,
   },
   separator: {
     marginVertical: 30,
