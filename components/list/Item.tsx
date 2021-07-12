@@ -26,20 +26,25 @@ export default class Item extends React.Component {
             }}>
             <Text 
               style={styles.title}>{this.props.title}</Text>
-            <Text>
-                <Text style={styles.description}>
-                    { this.props.description.length > 25 ? 
-                        `${this.props.description.substring(0,25)}...` 
-                        : this.props.description
-                    }
+            {
+                this.props.description !== null && this.props.description !== undefined ?
+                <Text>
+                    <Text style={styles.description}>
+                        {  
+                            this.props.description.length > 25 ? 
+                            `${this.props.description.substring(0,25)}...` 
+                            : this.props.description
+                        }
+                    </Text>
+                    <Text style={styles.descriptionTime}>
+                        { this.props.meta && this.props.meta.date !== undefined ? 
+                            ` ${this.getTimeFrom(this.props.meta.date)}` 
+                            : ''
+                        }
+                    </Text>
                 </Text>
-                <Text style={styles.descriptionTime}>
-                    { this.props.meta && this.props.meta.date !== undefined ? 
-                        ` ${this.getTimeFrom(this.props.meta.date)}` 
-                        : ''
-                    }
-                </Text>
-            </Text>
+                : null
+            }
           </View>
         </TouchableOpacity>
       );

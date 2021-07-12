@@ -15,7 +15,7 @@ import { Text, View } from '../components/Themed';
 import Item from '../components/list/Item';
 
 
-export default class SearchOffer extends React.Component {
+export default class GenerateOffer extends React.Component {
 
     constructor() {
         super();
@@ -100,9 +100,6 @@ export default class SearchOffer extends React.Component {
     
     this.setState({ fullData: newData });  
   };
-  componentDidMount()
-  {
-  }
 
   emptyList = () => {
       return (<Text style={styles.resultNotFound}> {`No se encuentran resultados para: ${this.state.query}`}</Text>);
@@ -112,7 +109,7 @@ export default class SearchOffer extends React.Component {
     return (
       <View style={styles.container}>
           <Ionicons style={styles.back} onPress={() => { this.props.navigation.goBack(null); }} name="ios-arrow-back-outline"/>
-          <Text style={styles.title}>¿En qué te sentís más fuerte?</Text>
+          <Text style={styles.title}>¿Qué trabajo estás necesitando?</Text>
           <TextInput
             autoCapitalize='none'
             autoCorrect={false}
@@ -131,7 +128,6 @@ export default class SearchOffer extends React.Component {
               ItemSeparatorComponent={this.renderSeparator}
               ListEmptyComponent={this.emptyList()}
           />
-
       </View>
     );
   }
@@ -142,7 +138,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#d0e5c3',//'#FF983E'
+    backgroundColor: '#FDD835',//'#FF983E'
   },
   title: {
     fontSize: 30,
@@ -151,6 +147,10 @@ const styles = StyleSheet.create({
     color: 'black',
     marginHorizontal: 30,
     marginBottom: 30,
+  },
+  resultNotFound: {
+      fontSize: 18,
+      textAlign: 'center',
   },
   back: {
     display:'flex',

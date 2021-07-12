@@ -13,6 +13,7 @@ import { RootStackParamList } from '../types';
 import BottomTabNavigator from './BottomTabNavigator';
 import Welcome from '../screens/Welcome';
 import SearchOffer from '../screens/SearchOffer';
+import GenerateOffer from '../screens/GenerateOffer';
 import LinkingConfiguration from './LinkingConfiguration';
 
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
@@ -35,6 +36,7 @@ function RootNavigator() {
         <Stack.Screen name="Welcome" component={Welcome} /> 
         <Stack.Screen name="Home" component={BottomTabNavigator} />
         <Stack.Screen name="SearchOffer" component={SearchOffer} />
+        <Stack.Screen name="GenerateOffer" component={GenerateOffer} />
         <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
     </Stack.Navigator>
   );
