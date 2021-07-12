@@ -12,6 +12,7 @@ import NotFoundScreen from '../screens/NotFoundScreen';
 import { RootStackParamList } from '../types';
 import BottomTabNavigator from './BottomTabNavigator';
 import Welcome from '../screens/Welcome';
+import SearchOffer from '../screens/SearchOffer';
 import LinkingConfiguration from './LinkingConfiguration';
 
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
@@ -32,10 +33,9 @@ function RootNavigator() {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
         
-        {
-         //<Stack.Screen name="Welcome" component={Welcome} /> 
-        }
+        <Stack.Screen name="Welcome" component={Welcome} /> 
         <Stack.Screen name="Home" component={BottomTabNavigator} />
+        <Stack.Screen name="SearchOffer" component={SearchOffer} />
         <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
     </Stack.Navigator>
   );
