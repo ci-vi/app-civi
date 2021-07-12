@@ -14,6 +14,7 @@ import BottomTabNavigator from './BottomTabNavigator';
 import Welcome from '../screens/Welcome';
 import SearchOffer from '../screens/SearchOffer';
 import GenerateOffer from '../screens/GenerateOffer';
+import ActiveOffers from '../screens/ActiveOffers';
 import LinkingConfiguration from './LinkingConfiguration';
 
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
@@ -37,6 +38,7 @@ function RootNavigator() {
         <Stack.Screen name="Home" component={BottomTabNavigator} />
         <Stack.Screen name="SearchOffer" component={SearchOffer} />
         <Stack.Screen name="GenerateOffer" component={GenerateOffer} />
+        <Stack.Screen name="ActiveOffers" component={ActiveOffers} />
         <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
     </Stack.Navigator>
   );

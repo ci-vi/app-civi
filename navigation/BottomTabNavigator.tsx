@@ -12,6 +12,8 @@ import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
 import TabOneScreen from '../screens/TabOneScreen';
 import Home from '../screens/Home';
+import Profile from '../screens/Profile';
+import Dashboard from '../screens/Dashboard';
 import TabTwoScreen from '../screens/TabTwoScreen';
 import { BottomTabParamList, TabOneParamList, TabTwoParamList } from '../types';
 
@@ -32,17 +34,17 @@ export default function BottomTabNavigator() {
         }}
       />
       <BottomTab.Screen
-        name="Algo"
-        component={Home}
+        name="Dashboard"
+        component={Dashboard}
         options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="ios-home" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon name="ios-apps" color={color} />,
         }}
       />
       <BottomTab.Screen
-        name="TabTwo"
-        component={TabTwoNavigator}
+        name="Profile"
+        component={Profile}
         options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon name="ios-person" color={color} />,
         }}
       />
     </BottomTab.Navigator>

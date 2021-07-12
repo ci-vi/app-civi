@@ -18,9 +18,10 @@ export default class Item extends React.Component {
     }
     render() {
       return (
-          <TouchableOpacity onPress={() => alert(`${this.props.title}: ${this.props.description}`)}>
+          <TouchableOpacity style={{backgroundColor: 'transparent'}} onPress={() => alert(`${this.props.title}: ${this.props.description}`)}>
           <View
             style={{
+              marginBottom: 10,
               padding: 16,
               borderRadius: 10
             }}>
