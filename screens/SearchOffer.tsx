@@ -12,26 +12,45 @@ import {
 import { Ionicons } from '@expo/vector-icons';
 import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
+import Item from '../components/list/Item';
 
 
 export default class SearchOffer extends React.Component {
 
-    constructor(navigation) {
+    constructor() {
         super();
         this.state = {
             query: '',
             data: [
                 {
                   id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-                  title: 'First Item',
+                  title: 'Pintor',
+                  description: 'Busco empleadx con experiencia para pintar casas. Pago por hora',
+                  created_at: '2021-07-11 12:00:00',
+                },
+                {
+                  id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28b6',
+                  description: 'Pintor',
+                  created_at: '2021-06-12 12:00:00',
+                  title: 'Algo',
+                },
+                {
+                  id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28b3',
+                  title: 'Soldadura',
+                  description: 'Pintor',
+                  created_at: '2021-06-12 12:00:00',
                 },
                 {
                   id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
-                  title: 'Second Item',
+                  title: 'Pintura',
+                  description: 'Pintor',
+                  created_at: '2021-06-12 12:00:00',
                 },
                 {
                   id: '58694a0f-3da1-471f-bd96-145571e29d72',
-                  title: 'Third Item',
+                  title: 'Carpintería',
+                  description: 'Pintor',
+                  created_at: '2021-06-12 12:00:00',
                 },
             ],
         }
@@ -39,11 +58,11 @@ export default class SearchOffer extends React.Component {
 
     }
   onPressSearchOffer = () => {
-    navigation.navigate('SearchOffer')
+    this.props.navigation.navigate('SearchOffer')
   };
 
   onPressGenerateOffer = () => {
-    navigation.navigate('GenerateOffer')
+    this.props.navigation.navigate('GenerateOffer')
   };
 
   renderSeparator()
@@ -61,20 +80,7 @@ export default class SearchOffer extends React.Component {
   }
 
   renderItem = ({ item }) => (
-      <TouchableOpacity onPress={() => alert('Item pressed!')}>
-      <View
-        style={{
-          flexDirection: 'row',
-          padding: 16,
-          alignItems: 'center',
-          borderRadius: 10
-
-        }}>
-        <Text 
-          category='s1'
-          style={{ fontSize: 22 }}>{item.title}</Text>
-      </View>
-    </TouchableOpacity>
+      <Item title={item.title} description={item.description} meta={{date: item.created_at}} />
   );
 
   handleSearch = text => {    
@@ -93,7 +99,7 @@ export default class SearchOffer extends React.Component {
   render () {
     return (
       <View style={styles.container}>
-          <Ionicons style={styles.back} onPress={() => { navigation.goBack(null); }} name="ios-arrow-back-outline"/>
+          <Ionicons style={styles.back} onPress={() => { this.props.navigation.goBack(null); }} name="ios-arrow-back-outline"/>
           <Text style={styles.title}>¿En qué te sentís más fuerte?</Text>
           <TextInput
             autoCapitalize='none'

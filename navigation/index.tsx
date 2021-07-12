@@ -32,7 +32,6 @@ const Stack = createStackNavigator<RootStackParamList>();
 function RootNavigator() {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
-        
         <Stack.Screen name="Welcome" component={Welcome} /> 
         <Stack.Screen name="Home" component={BottomTabNavigator} />
         <Stack.Screen name="SearchOffer" component={SearchOffer} />
