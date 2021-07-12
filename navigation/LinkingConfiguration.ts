@@ -12,6 +12,11 @@ export default {
     screens: {
       Root: {
         screens: {
+          Welcome: {
+            screens: {
+              Welcome: 'welcome',
+            },
+          },
           TabOne: {
             screens: {
               TabOneScreen: 'one',
